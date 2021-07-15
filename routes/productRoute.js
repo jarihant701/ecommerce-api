@@ -35,11 +35,11 @@ router.post('/', async (req, res) => {
   const newId = productCount + 1;
   const newProduct = new Product({
     id: newId,
-    title: req.body.title,
+    name: req.body.name,
     description: req.body.description,
     price: req.body.price,
     category: req.body.category,
-    image: req.body.image,
+    images: req.body.images,
   });
   await newProduct.save();
   res.send(newProduct);
