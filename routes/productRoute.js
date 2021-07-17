@@ -41,7 +41,7 @@ router.post('/', async (req, res) => {
     category: req.body.category,
     images: req.body.images,
   });
-  await newProduct.save();
+  // await newProduct.save();
   res.send(newProduct);
 });
 
@@ -51,10 +51,16 @@ router.post('/', async (req, res) => {
   @access   public
 */
 router.put('/:id', async (req, res) => {
-  const data = await Product.findOneAndUpdate({ id: req.params.id }, req.body, {
-    new: true,
-  }).select('-_id -__v');
-  res.send(data);
+  if (!req.params.id || !req.body)
+    return res.status(400).send({ error: 'Bad Request' });
+  res.json({
+    id: req.params.id,
+    name: req.body.name,
+    price: req.body.price,
+    description: req.body.description,
+    images: req.body.images,
+    category: req.body.category,
+  });
 });
 
 /*
@@ -62,14 +68,14 @@ router.put('/:id', async (req, res) => {
   @route    /api/products/:id
   @access   public
 */
-router.delete('/:id', async (req, res) => {
-  const data = await Product.findOneAndRemove(
-    { id: req.params.id },
-    {
-      new: true,
-    }
-  ).select('-_id -__v');
-  res.send(data);
-});
+// router.delete('/:id', async (req, res) => {
+//   const data = await Product.findOneAndRemove(
+//     { id: req.params.id },
+//     {
+//       new: true,
+//     }
+//   ).select('-_id -__v');
+//   res.send(data);
+// });
 
 module.exports = router;
