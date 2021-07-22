@@ -22,10 +22,8 @@ const PORT = process.env.PORT || 5000;
 
 //* Enable cors
 app.use(cors());
-
 //* Accept json in request body
 app.use(express.json());
-
 //* Serve static files
 app.use(express.static('public'));
 

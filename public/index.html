@@ -4,9 +4,469 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./styles/prism.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Document</title>
   </head>
-  <body>
-    Hello World!
+
+  <body class="">
+    <div class="hidden md:block github">
+      <a href="https://github.com/jarihant701/ecommerce-api" target="_blank">
+        <i class="fab fa-github transform -rotate-45"></i>
+      </a>
+    </div>
+    <nav class="text-center pt-6">
+      <h1 class="text-5xl font-bold text-primary-400 md:text-6xl lg:text-7xl">
+        Fake e-Commerce API
+      </h1>
+    </nav>
+    <main>
+      <div
+        class="
+          container
+          p-6
+          text-justify text-lg
+          mx-auto
+          lg:grid
+          lg:grid-cols-2
+          lg:gap-8
+          lg:place-items-center
+          lg:my-8
+          lg:text-xl
+        "
+      >
+        <div>
+          <p class="my-4">
+            Do you ever want to create an ecommerce site design but did not have
+            time to create the product data and have to drop the idea because of
+            this? Now don't worry about using lorem ipsum data or dropping your
+            project because now you can use
+            <span class="font-bold italic text-primary-600">
+              Fake Ecommerce API.
+            </span>
+          </p>
+          <img
+            src="./img/hero-image.jpg"
+            alt="Image illustration from freepik"
+            class="my-4 w-3/4 mx-auto lg:hidden"
+          />
+          <p class="my-4">
+            <span class="font-bold italic text-primary-600"
+              >Fake Ecommerce API</span
+            >
+            is a REST API which aims to replicate ecommerce site data with real
+            life products and images (no placeholder images). This data is best
+            for prototyping ecommerce websites.
+          </p>
+          <a
+            href="#endpoints"
+            class="
+              px-4
+              py-2
+              my-4
+              border-2 border-primary-400
+              rounded-full
+              text-primary-400
+              font-bold
+              inline-block
+              transition-all
+              hover:bg-primary-400 hover:text-white
+              text-base
+            "
+            >View Endpoints</a
+          >
+        </div>
+        <div>
+          <img
+            src="./img/hero-image.jpg"
+            alt="Image illustration from freepik"
+            class="my-4 mx-auto hidden lg:block"
+          />
+        </div>
+      </div>
+      <div>
+        <div class="container mx-auto p-6">
+          <h2 class="text-4xl font-bold text-primary-400 mb-4 lg:text-5xl">
+            Features
+          </h2>
+          <ul class="list-disc text-lg ml-12 lg:w-3/4 md:ml-16 lg:text-xl">
+            <li>No API Key required</li>
+            <li>Unlimited API calls</li>
+            <li>Free to Use</li>
+            <li>New Products are added frequently</li>
+            <li>
+              Each product has 3-5 stock images related to product type (All
+              images are downloaded from
+              <a
+                href="https://www.pexels.com"
+                target="_blank"
+                class="underline hover:text-primary-400"
+              >
+                Pexels
+              </a>
+              and are royalty free stock images)
+            </li>
+            <li>
+              Detailed product description object with dynamic key-value pair
+              related to the product
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="endpoints" class="container mx-auto p-6">
+        <h2 class="text-4xl font-bold text-primary-400 mb-4 lg:text-5xl">
+          Endpoints
+        </h2>
+        <div class="ml-6">
+          <h3 class="text-2xl font-bold text-primary-500">Base URL</h3>
+          <pre><code class='language-js'>https://fake-ecommerce-api.herokuapp.com/api/</code></pre>
+          <h3 class="text-2xl font-bold text-primary-500 mt-4">Routes</h3>
+          <div>
+            <h4 class="mb-1 text-lg font-bold">Get all available products</h4>
+            <details>
+              <summary class="flex justify-between gap-8">
+                <span
+                  class="
+                    bg-green-400
+                    text-white
+                    font-bold
+                    px-4
+                    py-1
+                    inline-block
+                  "
+                  >GET</span
+                >
+                <div class="text-blue-500 font-bold flex-grow text-lg">
+                  /products
+                </div>
+                <span
+                  class="
+                    bg-primary-400
+                    text-white
+                    font-bold
+                    px-4
+                    py-1
+                    inline-block
+                    cursor-pointer
+                  "
+                  >View Response</span
+                >
+              </summary>
+              <pre><code class="language-js">// Output:
+[
+  {
+    "images": [
+      "https://fake-ecommerce-api.herokuapp.com/img/headphones-1.jpg",
+      "https://fake-ecommerce-api.herokuapp.com/img/headphones-2.jpg",
+      "https://fake-ecommerce-api.herokuapp.com/img/headphones-3.jpg",
+      "https://fake-ecommerce-api.herokuapp.com/img/headphones-4.jpg"
+    ],
+    "id": 1,
+    "name": "Best Studio Quality Headphones",
+    "description": {
+      "text": "Dynamic, closed-ear headphones with up to 32 dB attenuation of outside sound. Lightweight and comfortable. Frequency response and warm, natural sound reproduction. Around-the-ear design with padded ear cups and Ergonomic design",
+      "Color": "Black",
+      "Weight": "581 g",
+      "Dimension": "‎24.5 x 18.7 x 8.4 cm",
+      "Form Factor": "Over the Ear",
+      "Noise Control": "Sound Isolation",
+      "Connectivity": "Wireless"
+    },
+    "price": 199.99,
+    "category": "Music"
+  },
+  /* More Records with similar schema */
+]</code></pre>
+            </details>
+          </div>
+          <div class="mt-4">
+            <h4 class="text-lg mb-1">Get a single product using product id</h4>
+            <details>
+              <summary class="flex justify-between gap-8">
+                <span
+                  class="
+                    bg-green-400
+                    text-white
+                    font-bold
+                    px-4
+                    py-1
+                    inline-block
+                  "
+                  >GET</span
+                >
+                <div class="text-blue-500 font-bold flex-grow text-lg">
+                  /products/:id
+                </div>
+                <span
+                  class="
+                    bg-primary-400
+                    text-white
+                    font-bold
+                    px-4
+                    py-1
+                    inline-block
+                    cursor-pointer
+                  "
+                  >View Response</span
+                >
+              </summary>
+              <pre><code class="language-js">// Output (with id = 2):
+{
+  "images": [
+    "https://fake-ecommerce-api.herokuapp.com/img/guitar-1.jpg",
+    "https://fake-ecommerce-api.herokuapp.com/img/guitar-2.jpg",
+    "https://fake-ecommerce-api.herokuapp.com/img/guitar-3.jpg",
+    "https://fake-ecommerce-api.herokuapp.com/img/guitar-4.jpg"
+  ],
+  "id": 2,
+  "name": "Acoustic-Electric Guitar With Hard Case - Dreadnought Body Style - Natural",
+  "description": {
+    "text": "The CD-140SCE expands on its siblings features with upgraded Fishman Presys electronics, rosewood back and sides and the addition of a hardshell case. The single-cutaway dreadnought body and solid spruce top provide robust tone, and the Easy-To-Play neck is comfortable for all playing styles. Topped off with a tortoiseshell pick guard and rosewood headcap, the CD-140SCE is ready for whatever you throw at it, at home or on the stage. All products are imported from the USA. ",
+    "Color": "Natural",
+    "Weight": "3 kg",
+    "Materail": "Top - Spruce, Back - Rosewood,Ovangkol,Mahogany"
+  },
+  "price": 599.99,
+  "category": "Music"
+}
+              </code></pre>
+            </details>
+          </div>
+          <div class="mt-4">
+            <h4 class="mb-1 text-lg font-bold">
+              Add a new product to the list
+            </h4>
+            <details>
+              <summary class="flex justify-between gap-8">
+                <span
+                  class="
+                    bg-yellow-400
+                    text-white
+                    font-bold
+                    px-4
+                    py-1
+                    inline-block
+                  "
+                  >POST</span
+                >
+                <div class="text-blue-500 font-bold flex-grow text-lg">
+                  /products
+                </div>
+                <span
+                  class="
+                    bg-primary-400
+                    text-white
+                    font-bold
+                    px-4
+                    py-1
+                    inline-block
+                    cursor-pointer
+                  "
+                  >View Response</span
+                >
+              </summary>
+              <pre><code class="language-js">// Code Example
+fetch('https://fake-ecommerce-api.herokuapp.com/api/products',{
+  method:"POST",
+  body:JSON.stringify({
+    name: 'test product',
+    price: 13.5,
+    description: {
+      text: 'test product description',
+      Color: 'Black',
+      // You can add more key-value pairs depending on the product 
+    },
+    image: ['https://i.pravatar.cc'], // Images url should be supplied in an array
+    category: 'electronic'
+  })
+}).then(res=>res.json())
+  .then(json=>console.log(json))
+
+// Output:
+{
+  id: 16,
+  name: 'test product',
+  price: 13.5,
+  description: {
+    text: 'test product description',
+    Color: 'Black', 
+  },
+  image: ['https://i.pravatar.cc'],
+  category: 'electronic'
+}</code></pre>
+            </details>
+            <p class="text-sm mt-1">
+              *Remember that nothing in real will be inserted into the database.
+              so if you want to access the new id you will get a 404 error.
+            </p>
+          </div>
+          <div class="mt-4">
+            <h4 class="mb-1 text-lg font-bold">
+              Update an existing product using product id
+            </h4>
+            <details>
+              <summary class="flex justify-between gap-8">
+                <span
+                  class="
+                    bg-indigo-400
+                    text-white
+                    font-bold
+                    px-4
+                    py-1
+                    inline-block
+                  "
+                  >PUT</span
+                >
+                <div class="text-blue-500 font-bold flex-grow text-lg">
+                  /products/:id
+                </div>
+                <span
+                  class="
+                    bg-primary-400
+                    text-white
+                    font-bold
+                    px-4
+                    py-1
+                    inline-block
+                    cursor-pointer
+                  "
+                  >View Response</span
+                >
+              </summary>
+              <pre><code class="language-js">// Code Example
+fetch('https://fake-ecommerce-api.herokuapp.com/api/products/1',{
+  method:"PUT",
+  body:JSON.stringify({
+    name: 'Updated Product',
+    price: 100,
+    description: {
+      text: 'Updated Product Description',
+      // You can add more key-value pairs depending on the product 
+    },
+    image: ['https://i.pravatar.cc'], // Images url should be supplied in an array
+    category: 'Music'
+  })
+}).then(res=>res.json())
+  .then(json=>console.log(json))
+
+// Output:
+{
+  id: 1,
+  name: 'Updated Product',
+  price: 100,
+  description: {
+    text: 'Updated Product Description', 
+  },
+  image: ['https://i.pravatar.cc'],
+  category: 'Music'
+}</code></pre>
+            </details>
+            <p class="text-sm mt-1">
+              * Nothing will be updated in the database
+            </p>
+          </div>
+          <h3 class="text-2xl font-bold text-primary-500 mt-4">Filters</h3>
+          <p class="text-lg mb-2">
+            There are two filters available to '/products' GET route namely
+            `<span class="text-primary-400 font-bold">limit</span>` and `<span
+              class="text-primary-400 font-bold"
+              >sort</span
+            >`.
+          </p>
+          <p class="text-lg mb-2">
+            <span class="text-primary-400 font-bold">Limit</span> is used as
+            <code class="language-js">
+              https://fake-ecommerce-api.herokuapp.com/api/products?limit=5
+            </code>
+            &nbsp;and will return the first 5 products or the number of products
+            passed in the url.
+          </p>
+          <p class="text-lg mb-2">
+            <span class="text-primary-400 font-bold">Sort</span> is used as
+            <code class="language-js">
+              https://fake-ecommerce-api.herokuapp.com/api/products?sort=desc
+            </code>
+            &nbsp;and this will return all the products in descending order
+            sorted by product id. By default the value of sort is asecending.
+            Only two values are allowed for sort
+            <span class="text-primary-400 font-semibold">asc and desc</span>.
+          </p>
+        </div>
+      </div>
+      <div class="container mx-auto p-6">
+        <h2 class="text-4xl font-bold text-primary-400 mb-4 lg:text-5xl">
+          Example Projects
+        </h2>
+        <p class="text-lg">
+          Have you created something using the Fake Ecommerce API and want to
+          showcase it on the documentation then fill this
+          <a
+            href="https://forms.gle/13Y9Dbm3rDtNL3nE9"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="underline text-blue-500"
+            >Google Form</a
+          >
+          with all the details
+        </p>
+      </div>
+    </main>
+    <footer class="p-8 text-center text-2xl border-t-2 border-primary-400">
+      Made with <span class="text-primary-400 font-bold">&hearts;</span> by
+      Arihant Jain
+      <p>
+        Comments, Suggestions and Issues are all welcome on the
+        <a
+          href="https://github.com/jarihant701/ecommerce-api"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline text-primary-400"
+        >
+          Github Repo
+        </a>
+      </p>
+      <div class="text-3xl cursor-pointer space-x-8 mt-4">
+        <a
+          href="https://github.com/jarihant701"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Github"
+        >
+          <i class="fab fa-github-square hover:text-primary-400"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/arihant-jain-862503190/"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="LinkedIn"
+        >
+          <i class="fab fa-linkedin hover:text-primary-400"></i>
+        </a>
+        <a
+          href="https://www.arihantjain.tech"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Portfolio"
+        >
+          <i class="fas fa-globe hover:text-primary-400"></i>
+        </a>
+        <a
+          href="mailto:jarihant701@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Mail"
+        >
+          <i class="fas fa-envelope hover:text-primary-400"></i>
+        </a>
+      </div>
+    </footer>
+    <script src="./scripts/prism.js"></script>
   </body>
 </html>
